@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Learning Mode</title>
     <link rel="stylesheet" type="text/css" href="customize.css">
+    <link rel="stylesheet" type="text/css" href="learningmode.css">
   </head>
   <body>
     <header>
@@ -14,15 +15,9 @@
     <nav>
       <ul>
         <li><a href="home.php">Home</a></li>
-        <li><a href="reportincident.php">Report Incident</a></li>
-        <li><a href="recordingmode.php">Recording Mode</a></li>
-        <li><a href="mynotes.php">My Notes</a></li>
-        <li><a href="searchhistory.php">Search History</a></li>
         <li><a href="learningmode.php">Learning Mode</a></li>
         <?php if(isset($_SESSION['user_id'])): ?>
-          <li><a href="logout.php">Logout</a></li>
         <?php else: ?>
-          <li><a href="signup.php">Sign Up</a></li>
           <li><a href="login.php">Login</a></li>
         <?php endif; ?>
         <li id="settings-tab"><a href="Settings.php">Settings</a></li>
@@ -36,10 +31,10 @@
         <p>Here, you can learn about various aspects of law enforcement and improve your skills and knowledge.</p>
         <p>Please select a category to begin:</p>
         <ul>
-          <li><a href="#">Criminal Law</a></li>
-          <li><a href="#">Traffic Law</a></li>
-          <li><a href="#">Firearms and Weapons</a></li>
-          <li><a href="#">Forensics</a></li>
+          <li><a href="https://www.mass.gov/info-details/massachusetts-law-about-criminal-law-and-procedure" target="_blank">Criminal Laws</a></li>
+          <li><a href="https://www.mass.gov/info-details/massachusetts-law-about-traffic-violations" target="_blank">Traffic Laws/Violations</a></li>
+          <li><a href="https://www.mass.gov/info-details/massachusetts-law-about-guns-and-other-weapons" target="_blank">Firearms/Weapons Laws</a></li>
+          <li><a href="https://www.mass.gov/orgs/trial-court-law-libraries" target="_blank">Trial Court Law Libraries</a></li>
         </ul>
       </section>
       <button onclick="document.location='home.php'">Go Back</button>
@@ -48,5 +43,10 @@
     <footer>
       <p>&copy; 2023 Salem Police Department</p>
     </footer>
+
+    <script>
+      // Set active tab in navigation bar
+      document.querySelector('nav ul li:nth-child(2) a').classList.add('active');
+    </script>
   </body>
 </html>
